@@ -309,42 +309,34 @@ body {
 /* --- Responsive Styles for Mobile Devices --- */
 
 @media (max-width: 600px) {
-    body {
-        /* This ensures the body doesn't exceed the screen height */
-        height: 100%;
-        overflow: hidden;
-    }
-
     .intro-content h1 {
-        font-size: 2.5em;
+        font-size: 2.5em; /* Make title smaller on mobile */
     }
 
     .start-button {
-        padding: 12px 24px;
+        padding: 12px 24px; /* Adjust button padding */
         font-size: 1.1em;
         white-space: nowrap;
     }
 
-    /* Make the chat container take up the full safe area */
+    /* Make the chat container take up the full screen */
     #chat-container {
         width: 100%;
-        height: 100%; /* Change to 100% to fill the body */
+        height: 100vh;
         max-width: 100%;
         border-radius: 0;
         box-shadow: none;
     }
 
-    /* Adjust padding for smaller screens and home bar */
+    /* Adjust padding for smaller screens */
     #user-input-form {
         padding: 10px;
-        padding-bottom: calc(10px + env(safe-area-inset-bottom)); /* Accommodates the iPhone home bar */
-        box-sizing: border-box;
     }
 
     /* Ensure sidebar takes full height and is on top */
     #sidebar {
         height: 100%;
-        z-index: 1001;
+        z-index: 1001; /* Make sure it's above the chat container */
     }
 
     /* Slightly smaller avatars and text on mobile */
