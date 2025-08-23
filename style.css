@@ -309,6 +309,16 @@ body {
 /* --- Responsive Styles for Mobile Devices --- */
 
 @media (max-width: 600px) {
+    .intro-content h1 {
+        font-size: 2.5em; /* Make title smaller on mobile */
+    }
+
+    .start-button {
+        padding: 12px 24px; /* Adjust button padding */
+        font-size: 1.1em;
+        white-space: nowrap;
+    }
+
     /* Make the chat container take up the full screen */
     #chat-container {
         width: 100%;
