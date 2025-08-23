@@ -328,9 +328,22 @@ body {
         box-shadow: none;
     }
 
-    /* Adjust padding for smaller screens */
+    /* ✅ Allow chat scroll on mobile */
+    #chat-window {
+        overflow-y: auto;
+        padding-bottom: 80px; /* prevent overlap with input */
+    }
+
+    /* ✅ Pin input/search box at bottom */
     #user-input-form {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 800px;
+        background-color: var(--chat-window-color);
         padding: 10px;
+        box-sizing: border-box;
     }
 
     /* Ensure sidebar takes full height and is on top */
