@@ -92,7 +92,7 @@ function handleFormSubmit(event) {
         saveMessageToHistory(userMessage, 'user');
         input.value = '';
 
-        const n8nWebhookUrl = 'https://joshith.app.n8n.cloud/webhook/24c00ddf-4005-419b-b5b2-6384b3b86c09'; // <-- IMPORTANT: PASTE YOUR PRODUCTION URL HERE
+        const n8nWebhookUrl = 'https://joshith.app.n8n.cloud/webhook/24c00ddf-4005-419b-b5b2-6384b3b86c09';
         const systemPrompt = fieldPrompts[activeField];
 
         const thinkingMessage = addMessage('...', 'bot-message');
@@ -107,10 +107,8 @@ function handleFormSubmit(event) {
                 systemPrompt: systemPrompt
             })
         })
-          // This is the NEW, simpler fetch logic
-        .then(response => response.text()) // We now expect plain text
+        .then(response => response.text())
         .then(botResponse => {
-            // The data is now the raw text, no need to parse it
             thinkingMessage.querySelector('.text').textContent = botResponse; 
             saveMessageToHistory(botResponse, 'bot');
         })
@@ -187,7 +185,8 @@ function loadSpecificChat(chatId) {
     if (chat) {
         currentChatId = chatId;
         activeField = chat.field || 'general';
-        input.placeholder = `Ask the ${activeField.charAt(0).toUpperCase() + active_field.slice(1)} GPT...`;
+        // Corrected variable name below
+        input.placeholder = `Ask the ${activeField.charAt(0).toUpperCase() + activeField.slice(1)} GPT...`;
         chatWindow.innerHTML = '';
         chat.history.forEach(msg => {
             addMessage(msg.text, msg.sender === 'user' ? 'user-message' : 'bot-message');
