@@ -12,6 +12,7 @@
     </div>
 
     <div id="sidebar">
+        <button id="new-chat-button">+ New Chat</button>
         <h2>Past Chats</h2>
         <div id="past-chats-list">
             </div>
@@ -25,12 +26,23 @@
         <div id="chat-window"></div>
         <form id="user-input-form">
             <div class="input-container">
+                <div id="fields-menu-container">
+                    <button type="button" id="fields-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </button>
+                    <div id="fields-menu" class="hidden">
+                        <div class="field-option" data-field="general">General GPT</div>
+                        <div class="field-option" data-field="medical">Medical GPT</div>
+                        <div class="field-option" data-field="study">Study Assistant</div>
+                    </div>
+                </div>
+                
                 <input type="text" id="user-input" placeholder="Ask me anything..." autocomplete="off" required>
                 <button type="submit" id="send-button">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </button>
             </div>
-            <p class="footer-text"> AI assistant.</p>
+            <p class="footer-text">A minimal spoof by a developer and their AI assistant.</p>
         </form>
     </div>
 
@@ -38,7 +50,7 @@
         <div class="modal-content">
             <span id="close-modal-button">&times;</span>
             <h2>Support</h2>
-            <p>for support contact</p>
+            <p>s v joshith</p>
             <p>svjoshith@gmail.com</p>
         </div>
     </div>
