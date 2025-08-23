@@ -1,4 +1,4 @@
-/* style.css - New Dark Mode Theme */
+/* style.css - Complete Code */
 
 :root {
     --background-color: #212121;
@@ -17,6 +17,7 @@ body {
     display: flex;
     justify-content: center;
     height: 100vh;
+    overflow: hidden; /* Prevents body from scrolling */
 }
 
 #chat-container {
@@ -24,10 +25,9 @@ body {
     flex-direction: column;
     height: 100%;
     width: 100%;
-    max-width: 800px; /* Limit chat width on larger screens */
+    max-width: 800px;
 }
 
-/* Initial placeholder screen */
 #placeholder {
     flex-grow: 1;
     display: flex;
@@ -42,10 +42,9 @@ body {
     overflow-y: auto;
     padding: 20px;
     background-color: var(--chat-window-color);
-    display: none; /* Hidden by default, shown via JS */
+    display: none;
 }
 
-/* Styling for each message bubble */
 .message {
     display: flex;
     padding: 15px;
@@ -76,14 +75,13 @@ body {
 }
 
 .bot-message .avatar {
-    background-color: #a020f0; /* Bot avatar color */
+    background-color: #a020f0;
 }
 
 .message .text {
     align-self: center;
 }
 
-/* Input form at the bottom */
 #user-input-form {
     padding: 20px;
 }
@@ -129,7 +127,8 @@ body {
     color: rgba(255, 255, 255, 0.5);
     margin-top: 10px;
 }
-/* --- New Sidebar & Modal Styles --- */
+
+/* --- Sidebar, Modal, & Fields Menu Styles --- */
 
 #menu-icon {
     position: fixed;
@@ -154,6 +153,7 @@ body {
     background-color: var(--background-color);
     border-right: 1px solid var(--border-color);
     padding: 20px;
+    box-sizing: border-box;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 999;
@@ -168,6 +168,7 @@ body {
 #past-chats-list {
     flex-grow: 1;
     overflow-y: auto;
+    margin-bottom: 15px;
 }
 
 #past-chats-list a {
@@ -196,10 +197,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: auto; /* Replace the old margin with this line */
+    flex-shrink: 0;
 }
 
-/* Support Modal Styles */
 #support-modal.modal-hidden {
     display: none;
 }
@@ -208,7 +208,7 @@ body {
     position: fixed;
     z-index: 1001;
     left: 0;
-    top:     0;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.6);
@@ -234,4 +234,111 @@ body {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+}
+
+#fields-menu-container {
+    position: relative;
+}
+
+#fields-icon {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 13px 15px;
+    cursor: pointer;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+#fields-icon svg {
+    fill: none;
+    stroke: currentColor;
+}
+
+#fields-icon:hover {
+    color: var(--text-color);
+}
+
+#fields-menu {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    margin-bottom: 10px;
+    background-color: var(--input-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+    z-index: 10;
+    overflow: hidden;
+}
+
+.field-option {
+    padding: 12px 15px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: background-color 0.2s;
+}
+
+.field-option:hover {
+    background-color: var(--user-message-color);
+}
+
+.hidden {
+    display: none;
+}
+/* --- New Chat Button Style --- */
+
+#new-chat-button {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 10px;
+    margin-bottom: 20px; /* Space below the button */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: left;
+    transition: background-color 0.2s;
+}
+
+#new-chat-button:hover {
+    background-color: var(--input-background);
+}
+/* --- Responsive Styles for Mobile Devices --- */
+
+@media (max-width: 600px) {
+    /* Make the chat container take up the full screen */
+    #chat-container {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* Adjust padding for smaller screens */
+    #user-input-form {
+        padding: 10px;
+    }
+
+    /* Ensure sidebar takes full height and is on top */
+    #sidebar {
+        height: 100%;
+        z-index: 1001; /* Make sure it's above the chat container */
+    }
+
+    /* Slightly smaller avatars and text on mobile */
+    .message .avatar {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        margin-right: 10px;
+    }
+
+    .message {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
 }
