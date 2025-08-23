@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh GPT Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+    </div>
+
+    <div id="sidebar">
+        <h2>Past Chats</h2>
+        <div id="past-chats-list">
+            </div>
+        <button id="support-button">Support</button>
+    </div>
+
+    <div id="chat-container">
+        <div id="placeholder">
+            <h1>Josh GPT</h1>
+        </div>
+        <div id="chat-window"></div>
+        <form id="user-input-form">
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Ask me anything..." autocomplete="off" required>
+                <button type="submit" id="send-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+            </div>
+            <p class="footer-text"> AI assistant.</p>
+        </form>
+    </div>
+
+    <div id="support-modal" class="modal-hidden">
+        <div class="modal-content">
+            <span id="close-modal-button">&times;</span>
+            <h2>Support</h2>
+            <p>for support contact</p>
+            <p>svjoshith@gmail.com</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
